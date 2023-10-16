@@ -1,0 +1,126 @@
+ion-content
+{
+    --ion-background-color: linear-gradient(120deg,#86c3ff, rgb(226, 160, 252), rgb(255, 253, 163))!important;
+}
+ion-card
+{
+  --ion-background-color: linear-gradient(120deg,#4661ff, rgb(11, 145, 255), rgb(62, 169, 240))!important;
+}
+
+h1 {
+    position: relative;
+    text-shadow: 25px #fffbfb;
+    text-align: center;
+    font-size: 30px;
+    margin-left:90px ;
+    margin-right:90px ;
+    font-family: "Poppins" sans-serif,;
+    text-transform: uppercase;
+    display:inline-block;
+    color: rgb(15, 0, 97);
+    font-weight: bold;
+  }
+
+.psw
+{
+  width:350px;
+  height:320px;
+  text-align: center;
+  display: inline-block;
+  margin-top: 150px;
+  margin-left: 8%;
+  margin-right: 8%;
+  background-color: #5600a19d;
+  -webkit-box-shadow: 0 10px 30px 0 rgb(195, 0, 255);
+  box-shadow: 0 10px 30px 0 rgb(155, 8, 192);
+  border-radius: 5px 5px 5px 5px;  
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+ 
+}
+
+button
+{
+    background-color: #5600a1;
+    padding: 0%;
+    margin: 0%;
+    margin-top: 25px;
+}
+
+ion-fab-button {
+    width: 70px;
+    height: 70px;
+ }
+
+ .like
+ {
+    ion-button {
+    width: 100px;
+    height: 100px;
+    --ion-background-color:#86c2ff1e;
+    }
+ }
+
+ .btn-us {
+  text-align: center;
+  background-image:linear-gradient(120deg,#8e05c4e7,#5600a1)!important;
+
+  border: 0;
+ border-radius: 10px;
+    box-sizing: border-box;
+    color: #ffffff;
+    margin-top: 5px;
+    height: 54px;
+    font-size: 30px;
+    font-weight: 600;
+    padding: 4px;
+    margin-right: 12px;
+    text-decoration: none;
+    z-index: 2;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+
+ion-button  {
+    margin-top: 5%;
+    margin-left: 18%;
+    margin-right: 26%;
+   display: inline-block;
+   height: 69px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    font-size: 20px;
+    box-shadow: 0 10px 30px 0 rgb(70, 57, 255);
+    font: {
+        family: 'Poppins', sans-serif;
+        
+      };
+    /*margin: 25px 20px 40px 20px;*/
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 10px;
+    --ion-color-primary: linear-gradient(90deg, #327aff, #4d008b);
+  }
+  
+  
+  ion-button:hover {
+    background-color: #39ace7;
+  }
+  
+  ion-button:active  {
+    -moz-transform: scale(0.95);
+    -webkit-transform: scale(0.95);
+    -o-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95);
+  }
+  
+ 

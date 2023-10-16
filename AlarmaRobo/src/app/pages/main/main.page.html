@@ -1,0 +1,42 @@
+<ion-app>
+<ion-content>
+
+
+  <ion-fab color="light" style="margin-top: 40px; margin-left: 15px;"horizontal="start" vertical="top" slot="fixed">
+    <ion-fab-button  color="dark" >
+      <ion-icon  name="settings"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="end">
+      <ion-fab-button color="dark" ><ion-icon (click)="navegarALogin()" style="font-size: 30px;"  name="log-out-outline"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
+<!--desctivada-->
+      <div *ngIf="!this.activada" class="alarma" >
+        <button  (click)="encenderAlarma()"   class="rojo"><img src="../../../assets/images/alarma.png" style="text-align: center;"width="440px" height="850px"  style="text-align: center; "></button>
+    </div>
+      <div *ngIf="this.activada" class="alarma" >
+        <button class="rojo"><img src="../../../assets/images/alarmaDos.png" style="text-align: center;"width="440px" height="540px"  style="text-align: center; "></button>
+        <p >¡Ingrese para detener alarma!</p>
+      <input  type="password"  [(ngModel)]="this.cont"  placeholder="Contraseña">
+      <ion-button (click)="this.apagarAlarma()"style=" font-size: 25px;"shape="round"class="detener-btn" fill="solid" >DETENER</ion-button>
+      </div>
+
+  
+  
+</ion-content>
+</ion-app>
+
+
+<!-- <ion-app>
+  <ion-content>
+   <h1 style="text-align: center;">Se inició sesión correctamente</h1>
+   <div style="text-align: center;">
+     <ion-button color="dark" (click)='logOut()'>Cerrar sesión</ion-button>
+   </div>
+   <div style="text-align: center; margin-top: 30px;">
+    <ion-spinner name="crescent" *ngIf="this.as.loading"></ion-spinner>
+  </div>
+  </ion-content>
+</ion-app>
+ -->

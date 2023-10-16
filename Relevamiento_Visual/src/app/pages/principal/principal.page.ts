@@ -1,0 +1,22 @@
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-principal',
+  templateUrl: './principal.page.html',
+  styleUrls: ['./principal.page.scss'],
+})
+export class PrincipalPage implements OnInit {
+
+  constructor(private router: Router) { }
+
+  ngOnInit() {
+  }
+  navegarAcosasLindas() { 
+    this.router.navigateByUrl('cosas-lindas');
+  }
+  navegarAcosasFeas() { 
+
+    this.router.navigateByUrl('cosas-feas');
+  }
+}

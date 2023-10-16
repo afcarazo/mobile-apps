@@ -1,0 +1,28 @@
+<ion-content>
+  <ion-menu color="danger" contentId="main-content" >
+    <ion-header color="danger">
+      <ion-toolbar color="danger">
+        <ion-title>Menú</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <ion-item>
+      <ion-icon style="font-size:40px ;" name="log-out-outline"></ion-icon>
+      <p (click)="salir()" style="font-size: 20px;">Cerrar sesión</p>
+    </ion-item>
+    </ion-content>
+  </ion-menu>
+  <div class="ion-page" id="main-content">
+    <ion-header>
+      <ion-toolbar color="danger">
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Menú</ion-title>
+      </ion-toolbar>
+    </ion-header>
+  </div>
+  <button (click)="navegarChatUno()" class="btn-uno"><h2>PPS - 4°A</h2></button>
+  <button  (click)="navegarChatDos()" class="btn-dos"><h2>PPS - 4°B</h2></button>
+
+</ion-content>

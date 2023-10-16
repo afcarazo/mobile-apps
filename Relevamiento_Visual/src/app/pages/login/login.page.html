@@ -1,0 +1,45 @@
+<ion-content class="ion-padding">
+  <ion-img src="assets/123.png"></ion-img>
+<ion-card class="ion-no-margin">
+      <ion-card-title>
+        <h2 class="active"> Iniciar sesión </h2>
+      </ion-card-title>
+
+      <div class="singin-btns">
+    <form [formGroup]="formularioLogin">
+    
+      <ion-item fill="solid" class="ion-margin-button">
+        <ion-icon name="mail-outline"></ion-icon>
+        <ion-input id="email"type="email" placeholder="Correo electrónico "formControlName="email"></ion-input>
+        <ion-note slot="error" style="font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: bold; color: rgb(6, 6, 85);" *ngIf="(email.dirty || email.touched) && email.errors">Correo electrónico no válido.</ion-note>
+    </ion-item>
+
+      <ion-item fill="solid" class="ion-margin-button">
+        <ion-icon name="lock-closed-outline"></ion-icon>
+        <ion-input  id="password" type="password" placeholder="Contraseña" formControlName="password"></ion-input>
+        <ion-note slot="error" style="  font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: bold; color: rgb(6, 6, 85);"*ngIf="(password.dirty || password.touched) && password.errors">La contraseña debe tener seis caracteres.</ion-note>
+    </ion-item>
+    <ion-card-content>
+<div class="signing-btns">
+      <ion-button style=" font-size: 16px;"shape="round"class="loginbtn" fill="solid" expand="full" (click)="login()">Ingresar</ion-button>
+      <ion-button  style=" font-size: 16px;"shape="round" class="loginbtn" fill="solid" expand="full" href="/register" type ="button" >Registrarte</ion-button>
+      <ion-button  style=" font-size: 16px;"shape="round" class="googlebtn" fill="solid" expand="full"  type ="button" > <ion-icon style="font-size: 30px;" class="google"src="../../../assets/images/google.svg"></ion-icon >Iniciar sesión con Google</ion-button>
+    </div> 
+  </ion-card-content>
+<!--div class="password_forgot">
+  <ion-button style="font-size: 14px;"fill="clear" class="ion-no-padding" href="/forgot-password">¿Has olvidado la contraseña?</ion-button>
+</div-->
+
+<ion-card-content >
+  <div class="user-btn">
+  <ion-button (click)= "userUno()"  shape="round" fill="solid"> <ion-icon name="person-add-outline" ></ion-icon >Administrador</ion-button><br>
+    <ion-button  (click)= "userDos()" shape="round"fill="solid" > <ion-icon name="person-add-outline" ></ion-icon >Invitado</ion-button><br>
+      <ion-button (click)= "userTres()"  shape="round"fill="solid" > <ion-icon name="person-add-outline" ></ion-icon >Anónimo</ion-button>
+      </div>
+      </ion-card-content>   
+
+    </form>
+
+    </div>
+  </ion-card>
+  </ion-content>

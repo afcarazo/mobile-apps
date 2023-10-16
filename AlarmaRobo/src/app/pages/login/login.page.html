@@ -1,0 +1,67 @@
+<ion-content class="ion-padding" style="padding:0%">
+  <ion-img style="padding: 0%; margin: 0%;" src="assets/banner.png"></ion-img>
+  <ion-card class="ion-no-margin">
+    <ion-card-title>
+      <h2 class="active" style="margin-top: 0px;"> Iniciar sesión </h2>
+    </ion-card-title>
+
+    <div class="singin-btns">
+      <form [formGroup]="formularioLogin" (ngSubmit)="login()">
+
+        <ion-item fill="solid" class="ion-margin-button">
+          <ion-icon name="mail-outline"></ion-icon>
+          <ion-input id="email" type="email" placeholder="Correo electrónico " formControlName="email"></ion-input>
+          <ion-note slot="error"
+            style="font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: bold; color: rgb(6, 6, 85);"
+            *ngIf="(email.dirty || email.touched) && email.errors">Correo electrónico no válido.</ion-note>
+        </ion-item>
+
+        <ion-item fill="solid" class="ion-margin-button">
+          <ion-icon name="lock-closed-outline"></ion-icon>
+          <ion-input id="password" type="password" placeholder="Contraseña" formControlName="password"></ion-input>
+          <ion-note slot="error"
+            style="  font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: bold; color: rgb(6, 6, 85);"
+            *ngIf="(password.dirty || password.touched) && password.errors">La contraseña debe tener seis caracteres.
+          </ion-note>
+        </ion-item>
+        <ion-card-content>
+          <div class="signing-btns">
+            <button style="width: 350px;margin-bottom: 10px; " class="btn-ef" type="submit">Ingresar</button>
+            <button style="width: 350px; margin-bottom: 10px;" class="btn-ef" href="/register"
+              type="button">Registrarte</button>
+            <button style="width: 350px; margin-bottom: 15px;" class="btn-ef" type="button">
+              <ion-icon name="logo-google" style="margin-right: 10px; color:rgb(34, 0, 126);"></ion-icon>Iniciar sesión
+              con Google
+            </button><br>
+          </div>
+        </ion-card-content>
+        <div class="password_forgot">
+          <!--ion-button fill="clear" class="ion-no-padding" href="/forgot-password">¿Has olvidado la contraseña?</ion-button-->
+        </div>
+      </form>
+      <ion-grid style="display: flex; flex-flow: column;">
+        <ion-row >
+          <ion-card-content class="grupo" >
+            <ion-item class="boton">
+              <ion-icon style="font-size:37px" src="../../../assets/user.svg "></ion-icon>
+              <ion-label class="cambiar" style="font-size: 20px; font-weight: bold; color:rgb(7, 7, 7); ">Anónimo
+              </ion-label>
+              <ion-checkbox slot="start" (click)="userTres()"></ion-checkbox>
+            </ion-item>
+            <ion-item  class="boton">
+              <ion-icon style="font-size:37px" src="../../../assets/user.svg"></ion-icon>
+              <ion-label style="font-size: 20px; font-weight: bold; color:rgb(0, 0, 0);">Invitado</ion-label>
+              <ion-checkbox  slot="start" (click)="userDos()"></ion-checkbox>
+            </ion-item>
+          </ion-card-content>
+          <ion-item  class="boton" style="margin-left:60px">
+            <ion-icon style="font-size:37px" src="../../../assets/user.svg"></ion-icon>
+            <ion-label style="font-size: 20px; font-weight: bold; color:rgb(0, 0, 0)">Administrador</ion-label>
+            <ion-checkbox slot="start" (click)="userUno()"></ion-checkbox>
+          </ion-item>
+        </ion-row>
+      </ion-grid>
+
+    </div>
+  </ion-card>
+</ion-content>

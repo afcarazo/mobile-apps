@@ -1,0 +1,12 @@
+{
+	"appId": "relevamiento.app",
+	"appName": "Relevamiento Visual",
+	"webDir": "www",
+	"bundledWebRuntime": false,
+	"plugins": {
+		"SplashScreen": {
+			"launchAutoHide": false,
+			"showSpinner": false
+		}
+	}
+}

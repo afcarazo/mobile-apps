@@ -1,0 +1,45 @@
+<app-menu>r</app-menu>
+<ion-content>
+  <div class="spin" *ngIf="spinner">
+    <ion-spinner name="crescent"></ion-spinner>
+</div>
+
+<div >
+  <div class="text-center" style="--ion-background-color: linear-gradient(120deg,#86c3ff, rgb(226, 160, 252), rgb(255, 253, 163))!important;" >
+    <h1 style="margin-top:20px; text-align:center;">Cosas lindas</h1><br>
+  </div>
+  <ion-grid style="--ion-background-color: linear-gradient(120deg,#86c3ff, rgb(226, 160, 252), rgb(255, 253, 163))!important;">
+    <ion-row>
+      <ion-col size="12" *ngFor="let photo of misFotosLindas; index as position">
+        <ion-card style=" text-align: center; ;--ion-background-color: linear-gradient(120deg,#4661ff, rgb(11, 145, 255), rgb(62, 169, 240))!important">
+        <!-- <ion-img [src]="photo.imagen" (load)="changeSpinner()"></ion-img> -->
+        <img src="{{photo.imagen}}" width="300px" (load)="spinner = false" [ngClass]="{'img-loaded':spinner}" />
+        <ion-text color="dark">
+          <h5 style="color:rgb(255, 255, 255); font-size:14px">Votos: {{photo.votos}} Fecha: {{photo.fecha}}</h5>
+        </ion-text>
+      </ion-card>
+      </ion-col>
+
+     
+    </ion-row>
+  </ion-grid>
+  <div class="text-center" style="--ion-background-color: linear-gradient(120deg,#86c3ff, rgb(226, 160, 252), rgb(255, 253, 163))!important;" >
+    <h1 style="margin-top:100px; text-align:center;">Cosas feas</h1><br>
+  </div>
+ 
+  <ion-grid style="--ion-background-color: linear-gradient(120deg,#86c3ff, rgb(226, 160, 252), rgb(255, 253, 163))!important;">
+    <ion-row>
+      <ion-col size="12" *ngFor="let photo of misFotosFeas; index as position">
+        <ion-card style="  --ion-background-color: linear-gradient(120deg,#4661ff, rgb(11, 145, 255), rgb(62, 169, 240))!important; text-align: center;">
+        <!-- <ion-img [src]="photo.imagen" (load)="changeSpinner()"></ion-img> -->
+        <img src="{{photo.imagen}}" width="300px" (load)="spinner = false" [ngClass]="{'img-loaded':spinner}"   />
+        <ion-text color="dark">
+          <h5 style="color:rgb(255, 255, 255); font-size:14px">Votos: {{photo.votos}} Fecha: {{photo.fecha}}</h5>
+        </ion-text>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+
+</ion-content>

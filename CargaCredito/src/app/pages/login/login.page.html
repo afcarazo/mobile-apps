@@ -1,0 +1,52 @@
+<ion-content padding class="background">
+  <ion-card class="ion-no-margin">
+  
+        <ion-card-title>
+          <h2 class="active"> Iniciar sesión </h2>
+        </ion-card-title>
+  
+        <div class="singin-btns">
+      <form [formGroup]="formularioLogin">
+      
+        <ion-item fill="solid" class="ion-margin-button">
+          <ion-icon name="mail-outline"></ion-icon>
+          <ion-input  style="padding: 20px;"id="email"type="email" placeholder="Correo electrónico"formControlName="email"></ion-input>
+         <ion-note slot="error" style="font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: bold; color: rgb(6, 6, 85);" *ngIf="(email.dirty || email.touched) && email.errors">Correo electrónico no válido.</ion-note>
+      </ion-item>
+  
+        <ion-item fill="solid" class="ion-margin-button">
+          <ion-icon name="lock-closed-outline"></ion-icon>
+          <ion-input  id="password" type="password" placeholder="Contraseña" formControlName="password"></ion-input>
+         <ion-note slot="error" style="  font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: bold; color: rgb(6, 6, 85);"*ngIf="(password.dirty || password.touched) && password.errors">La contraseña debe tener seis caracteres.</ion-note>
+      </ion-item>
+      <ion-card-content>
+  <div class="signing-btns">
+        <button class="sgn-btn"(click)="login()" >Ingresar</button><br>
+        <button class="sgn-btn"   href="/register" type ="button" >Registrarte</button><br>
+        <button style="margin-bottom: 30px;" class="sgn-btn" type ="button" ><ion-icon name="logo-google" style="margin-right: 10px; color:rgb(34, 0, 126);"></ion-icon>Iniciar sesión con Google</button><br>
+      </div> 
+    </ion-card-content>
+    <ion-card-content >
+      <div class="user-btn"style="margin-left:30px;margin-right:30px;">
+            <ion-grid style="display: flex; flex-flow: column;">
+              <ion-row style="text-align: center; margin-bottom: 15%; flex-grow: 1; font-size: 25px;">
+                <ion-col>
+                  <ion-button  fill="outline" (click)='userUno()' style="--border-color: #50A4AB; color: white; --border-width: 3px;">Administrador</ion-button>              
+                </ion-col>
+                <ion-col>         
+                  <ion-button fill="outline" (click)='userDos()' style="--border-color: #50A4AB; color: white; --border-width: 3px;">Invitado</ion-button>     
+                </ion-col>
+                
+                  <ion-col>
+                    <ion-button fill="outline" (click)='userTres()' style="--border-color: #50A4AB; color: white; --border-width: 3px;">Anónimo</ion-button>  
+                  </ion-col>         
+              </ion-row>
+            </ion-grid>
+          
+          </div>
+          </ion-card-content>
+  
+      </form>
+      </div>
+    </ion-card>
+    </ion-content>

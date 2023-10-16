@@ -1,0 +1,36 @@
+<app-menu></app-menu>
+<ion-content>
+  
+  <!--div style="margin-bottom: 7%;" *ngFor="let item of this.listadoCosasLindas; let i = index" data-index="i">
+  <h1 style="margin-top:100px; text-align:center;">Cosas lindas</h1><br>
+  <ion-button style="text-align: center;  background-color: linear-gradient(120deg,#5600a1);" > <ion-icon style="font-size: 30px; padding:15px; text-align:center;" name="cloud-upload-outline"></ion-icon >Subir imagen</ion-button><br><br>
+  <div class="psw"style="display: inline-block;" style="margin-bottom: 0;margin-top:0px">
+    <button ><img src="../../../assets/cosalinda.jpg" style="margin-top:0px;text-align: center; margin-bottom: 0px;" style="display: inline-block; "></button>
+    <div class="user-btn">
+      <button style=" margin-top:0px;width: 350px;height: 60px;margin-bottom: 10px;" class="btn-us">  <ion-icon style="margin-bottom: 5px;  font-size: 48px;"src="../../../assets/like.svg"></ion-icon ></button>
+    </div>
+  </div>
+    </div-->
+
+    <h1 style="margin-top:50px; text-align:center;">Cosas lindas</h1>
+    <ion-button style="margin-bottom: 0px;" (click)="subirFoto()"  style="text-align: center;  background-color: linear-gradient(120deg,#5600a1);" > <ion-icon style="font-size: 30px; padding:15px; text-align:center;" name="camera-outline"></ion-icon >Subir imagen</ion-button><br><br>
+  
+      <div style="margin-bottom: 7%;" *ngFor="let item of this.listadoCosasLindas; let i = index" data-index="i">
+    <ion-card style="text-align: center;">
+      <img src="{{item.pathFoto}}"  width="350px"  style="margin-top:0px;text-align: center; margin-bottom: 0px;" style="display: inline-block; ">
+      <ion-card-header>
+        <ion-card-title style="color: #fff; font-size: 20px; font-weight: bold;">{{item.email}}</ion-card-title>
+        <ion-card-subtitle style="color: #fff; font-size: 14px; font-weight: bold;">{{item.hora}}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content *ngIf="(item.likes.indexOf(this.userEmail))==-1">
+        <button (click)="setLike(item)" style=" margin-top:0px;width: 350px;height: 60px;margin-bottom: 10px;" class="btn-us">  <ion-icon style="margin-bottom: 5px;  font-size: 48px;"src="../../../assets/like.svg"></ion-icon ></button>
+      </ion-card-content>    
+      <ion-card-content  *ngIf="(item.likes.indexOf(this.userEmail))!=-1">
+        <button (click)="error()" style=" margin-top:0px;width: 350px;height: 60px;margin-bottom: 10px; " class="btn-us">  <ion-icon style="margin-bottom: 5px; opacity: 0.7; font-size: 48px;"src="../../../assets/like.svg"></ion-icon ></button>
+      </ion-card-content>    
+    </ion-card>
+
+  </div>
+
+
+</ion-content>

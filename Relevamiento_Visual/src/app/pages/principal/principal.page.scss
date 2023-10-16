@@ -1,0 +1,50 @@
+ion-content
+{
+    --ion-background-color: linear-gradient(120deg,#86c3ff, rgb(226, 160, 252), rgb(255, 253, 163))!important;
+}
+h1 {
+    position: relative;
+    text-shadow: 25px #fffbfb;
+    text-align: center;
+    font-size: 25px;
+    margin-left:30px ;
+    font-family: "Poppins" sans-serif,;
+    text-transform: uppercase;
+    display:inline-block;
+    color: rgb(15, 0, 97);
+    font-weight: 600;
+  }
+
+.psw
+{
+  width:350px;
+  height:280px;
+  text-align: center;
+  display: inline-block;
+  margin-top: 150px;
+  margin-left: 8%;
+  margin-right: 8%;
+  background-color: #5600a19d;
+  -webkit-box-shadow: 0 10px 30px 0 rgb(195, 0, 255);
+  box-shadow: 0 10px 30px 0 rgb(155, 8, 192);
+  border-radius: 5px 5px 5px 5px;  
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+ 
+}
+
+button
+{
+    background-color: #5600a1;
+    padding: 0%;
+    margin: 0%;
+    margin-top: 25px;
+}
+
+ion-fab-button {
+    width: 70px;
+    height: 70px;
+ }

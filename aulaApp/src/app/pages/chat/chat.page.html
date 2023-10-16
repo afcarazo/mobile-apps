@@ -1,0 +1,54 @@
+
+<ion-content>
+
+  <body>
+  
+      <div class='container' ng-cloak ng-app="chatApp">
+        <ion-menu color="danger" contentId="main-content" >
+          <ion-header color="danger">
+            <ion-toolbar color="danger">
+              <ion-title>Menú</ion-title>
+            </ion-toolbar>
+          </ion-header>
+          <ion-content class="ion-padding">
+            <ion-item>
+              <p (click)="navegarPrincipal()" style="font-size: 20px;">Chats</p>
+            </ion-item>  
+            <ion-item>
+            <ion-icon style="font-size:40px ;" name="log-out-outline"></ion-icon>
+            <p (click)="salir()" style="font-size: 20px;">Cerrar sesión</p>
+          </ion-item>
+           </ion-content>
+        </ion-menu>
+        <div class="ion-page" id="main-content">
+          <ion-header>
+            <ion-toolbar color="danger">
+              <ion-buttons slot="start">
+                <ion-menu-button></ion-menu-button>
+              </ion-buttons>
+              <ion-title>Menú</ion-title>
+            </ion-toolbar>
+          </ion-header>
+        </div><br><br><br>
+        <div class='chatbox' ng-controller="MessageCtrl as chatMessage">
+          <div class="chatbox__messages" ng-repeat="message in messages">
+            <div class="chatbox__messages__user-message">
+              <div class="chatbox__messages__user-message--ind-message"*ngFor="let chat of chatService.chats" 
+                    [ngClass]="{'preparar': chatService.usuario.id== chat.uid} ">
+                <p *ngIf="chatService.usuario.id!= chat.uid"  style="text-transform: uppercase;"class="name">{{chat.name}}</p>
+                <p class="message">{{chat.message}}</p><br>
+                <p class="date">{{chat.date}}</p>
+              </div>
+            </div><br>
+          </div>
+        </div>
+        <form  [formGroup]="formularioChat">
+          <ion-item style="width: 365px;"fill="solid" class="ion-margin-button">
+            <ion-input style="color: black;"type="text" id="mensaje"placeholder="Enviar mensaje "formControlName="mensaje"  [(ngModel)]="mensaje"  class="form-control"> </ion-input>
+            <ion-icon (click)="enviar_mensaje()"name="send"></ion-icon>
+           </ion-item>
+        </form>
+        </div>
+  </body>
+  </ion-content>
+  
