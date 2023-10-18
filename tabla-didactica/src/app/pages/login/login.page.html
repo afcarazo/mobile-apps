@@ -1,0 +1,51 @@
+<ion-content padding class="background">
+  <ion-card class="ion-no-margin">
+        <ion-card-title>
+          <img style="margin-top: 0px; margin-bottom: 0px;" style="width: 190px; margin-top: 20px;" src="assets/icon.png"><br>
+          <h2 class="active"> Iniciar sesión </h2>
+        </ion-card-title>
+  
+        <div class="singin-btns">
+      <form [formGroup]="formularioLogin" (ngSubmit)="login()">
+      
+        <ion-item fill="solid" class="ion-margin-button">
+          <ion-icon name="mail-outline"></ion-icon>
+          <ion-input id="email"type="email" placeholder="Correo electrónico "formControlName="email"></ion-input>
+         <ion-note style="font-weight: bold;  color: rgb(1, 0, 77); font-size: 15px;"slot="error" *ngIf="(email.dirty || email.touched) && email.errors">Correo electrónico no válido.</ion-note>
+      </ion-item>
+  
+        <ion-item fill="solid" class="ion-margin-button">
+          <ion-icon name="lock-closed-outline"></ion-icon>
+          <ion-input  id="password" type="password" placeholder="Contraseña" formControlName="password"></ion-input>
+         <ion-note style="font-weight: bold; color:rgb(1, 0, 77); font-size: 15px;"slot="error"  *ngIf="(password.dirty || password.touched) && password.errors">La contraseña debe tener seis caracteres.</ion-note>
+      </ion-item>
+      <ion-card-content>
+  <div class="signing-btns">
+        <button class="loginbtn" type ="submit">Ingresar</button><br>
+        <button class="loginbtn" fill="solid" expand="full" href="/register" type ="button" >Registrarte</button><br>
+        <button  class="loginbtn" type ="button" > <ion-icon style="font-size: 30px;" class="google"src="../../../assets/images/google.svg"></ion-icon >Iniciar sesión con Google</button>
+      </div> 
+    </ion-card-content>
+      </form>
+    
+            <ion-card-content style="text-align:center; font-size: 30px; margin: 35px;">
+              <ion-item>
+                <ion-icon style="margin-right: 15px; font-size:37px" src="../../../assets/user.svg " ></ion-icon >
+                <ion-label style="font-size: 20px; font-weight: bold; color:#fff">Anonimo</ion-label>
+                <ion-toggle  color="secondary" (click)= "userTres()" slot="end"></ion-toggle>
+              </ion-item>
+              <ion-item>
+                <ion-icon style="margin-right: 15px; font-size:37px" src="../../../assets/user.svg"  ></ion-icon >
+                <ion-label style="font-size: 20px; font-weight: bold; color:#fff" >Invitado</ion-label>
+                <ion-toggle  color="secondary" (click)= "userDos()" slot="end"></ion-toggle>
+              </ion-item>
+              <ion-item>
+                <ion-icon style="margin-right: 15px; font-size:37px" src="../../../assets/user.svg" ></ion-icon >
+                <ion-label  style="font-size: 20px; font-weight: bold; color:#fff">Administrador</ion-label>
+                <ion-toggle  color="secondary" (click)= "userUno()" slot="end"></ion-toggle>
+              </ion-item>
+            </ion-card-content>
+            
+      </div>
+    </ion-card>
+    </ion-content>

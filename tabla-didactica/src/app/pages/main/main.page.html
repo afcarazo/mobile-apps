@@ -1,0 +1,74 @@
+<ion-content>
+
+
+
+  <ion-fab class="fab-ban" horizontal="end" vertical="start" slot="fixed" style="margin-left:10px; margin-right:10px;">
+    <ion-fab-button color="light" size="large">
+      <ion-icon style="font-size: 90px;"  src={{controlador.pathIconoIdioma}}></ion-icon>
+    </ion-fab-button>  
+    <ion-fab-list side="start">
+      <ion-fab-button  (click)="cambiarIdioma('ingles')"color="light">
+        <ion-icon style="font-size: 90px;" src="../../../assets/banderas/estados-unidos.svg"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button  (click)="cambiarIdioma('portugues')"color="light">
+        <ion-icon style="font-size: 90px;"  src="../../../assets/banderas/brasil.svg"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button  (click)="cambiarIdioma('español')" color="light">
+        <ion-icon style="font-size: 90px;"  src="../../../assets/banderas/españa.svg"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+  
+  <ion-fab style="margin-left:10px; margin-right:10px;" class="fab-ban" horizontal="start" vertical="start" slot="fixed">
+    <ion-fab-button color="light" size="large">
+      <ion-icon style="font-size: 50px;"  src={{controlador.pathIconoJuego}}></ion-icon>
+    </ion-fab-button>  
+    <ion-fab-list side="end">
+      <ion-fab-button (click)="cambiarTematica('animales')" color="light">
+        <ion-icon style="font-size: 55px;" src="../../../assets/tematicas/animal.svg"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button  (click)="cambiarTematica('color')" color="light">
+        <ion-icon style="font-size: 50px;" src="../../../assets/tematicas/colores.svg"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button  (click)="cambiarTematica('numero')" color="light">
+        <ion-icon style="font-size: 60px;" src="../../../assets/tematicas/numeros.svg"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
+  <ion-fab style="margin-left:10px; margin-right:10px;" class="fab-ban" horizontal="start" vertical="bottom" slot="fixed">
+    <ion-fab-button (click)="logout()" color="light">
+      <ion-icon style="font-size:40px;" class="españa" src="../../../assets/tematicas/off.svg"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+
+
+  <body>
+    <div class="colores" style="display: inline-block;">
+    <ion-grid >      
+      <ion-row >
+        <ion-col size="6" size-lg *ngFor="let boton of controlador.listaBotones">
+            <ion-button color=#d988ff (click)="ReproducirSonido(boton.pathSonido)">
+              <ion-grid>
+                <ion-row *ngIf="!(controlador.tipoJuego==0 || controlador.tipoJuego=='colores')">
+                  <ion-col>
+                    <ion-img  src={{boton.pathFoto}}></ion-img>
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                </ion-row>
+              </ion-grid>
+            </ion-button>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+  </div>
+
+</body>
+
+
+
+
+</ion-content>
